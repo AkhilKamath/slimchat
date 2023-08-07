@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 return [
     'errorParams' =>  [
-        'displayErrorDetails' => true,
+        'displayErrorDetails' => false,
         'logErrors' => true,
-        'logErrorDetails' => true // TODO: set this according to env
+        'logErrorDetails' => true
     ],
 ];

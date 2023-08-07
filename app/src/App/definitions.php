@@ -24,7 +24,6 @@ return [
   },
   EntityManager::class => function () {
     $isDevMode = true;
-    // $config = Setup::createAnnotationMetadataConfiguration([__DIR__ . "/../Model"], $isDevMode);
     $config = ORMSetup::createAttributeMetadataConfiguration(
       paths: array(__DIR__. "/../Model"),
       isDevMode: true,

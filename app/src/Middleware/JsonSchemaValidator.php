@@ -8,6 +8,13 @@ use Psr\Http\Server\RequestHandlerInterface as RequestHandler;
 use Slim\Psr7\Response as Response;
 use Slim\Routing\RouteContext;
 
+/**
+ * This middleware class is responsible for the validation of incoming JSON requests.
+ * It validates the request's body against a predefined JSON schema for the User, Chat and Message models.
+ * If the validation succeeds, the process continues to the next handler.
+ * If the validation fails, it immediately returns a 400 Bad Request response with details about the validation errors.
+ * This middleware will validate for all the POST routes.
+ */
 class JsonSchemaValidator
 {
     public function __invoke(Request $request, RequestHandler $handler): Response

@@ -67,7 +67,6 @@ class User
     public function setToken(string $token): self
     {
         $this->token = $token;
-        // $this->token = password_hash($token, PASSWORD_DEFAULT);
         return $this;
     }
 

@@ -25,7 +25,6 @@ class Chat
     #[Column(type: "string")]
     private string $name;
 
-    // Define many-to-many relationship with User
     #[ORM\ManyToMany(targetEntity: User::class, mappedBy: "chats")]
     private Collection $users;
 

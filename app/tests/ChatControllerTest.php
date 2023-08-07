@@ -17,8 +17,6 @@ class ChatControllerTest extends BaseTest
         $this->faker = Factory::create();
     }
 
-    
-
     public function test1GetAllChats()
     {
         $user = $this->createUser();

@@ -11,6 +11,13 @@ use App\Repository\UserRepository;
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
 
+/**
+ * This middleware class is responsible for the authentication of the incoming requests.
+ * It validates the JWT token provided in the 'Authorization' header of the request.
+ * If the token is valid, it fetches the corresponding user and adds it to the request attributes.
+ * If the token is invalid or not provided, it returns a 401 Unauthorized response.
+ * This middleware will authenticate all routes except the route named 'createUser'.
+ */
 class AuthMiddleware
 {
     private $userRepository;

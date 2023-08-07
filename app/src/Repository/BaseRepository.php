@@ -8,10 +8,6 @@ use PDO;
 use Doctrine\ORM\EntityManager;
 
 abstract class BaseRepository {
-  // protected $pdo;
-  // public function __construct(PDO $pdo) {
-  //   $this->pdo = $pdo;
-  // }
   private EntityManager $entityManager;
 
   public function __construct(EntityManager $entityManager) {
@@ -27,6 +23,4 @@ abstract class BaseRepository {
   protected function getEntityManager(): EntityManager {
     return $this->entityManager;
   }
-
-  // pagination code goes here
 }
