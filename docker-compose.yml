@@ -1,0 +1,23 @@
+version: '3'
+services:
+    web:
+        image: nginx:latest
+        ports:
+            - "8000:80"
+        volumes:
+            - ./nginx.conf:/etc/nginx/conf.d/nginx.conf
+            - ./app:/app
+        depends_on:
+            - php
+        restart: always
+    php:
+        build:
+            context: .
+            dockerfile: PHP.Dockerfile
+        volumes:
+            - ./app:/app
+        depends_on:
+            - mysql
+        restart: always
+volumes:
+   slimchat: {}
